@@ -2,6 +2,7 @@
 
 git clone https://github.com/amber-md/pytraj
 cd pytraj
+git checkout `git tag | tail -1`
 
 devtools/mkrelease
 
@@ -13,6 +14,12 @@ git pull
 export CPPTRAJHOME=`pwd`
 cd ..
 
-python scripts/install_libcpptraj.py -openmp
+platform=`uname`
+if [ "$platform" = 'Linux' ]; then
+    python scripts/install_libcpptraj.py -openmp
+else
+    python scripts/install_libcpptraj.py
+fi
+
 cd dist
 python ../scripts/build_wheel.py pytraj*gz
