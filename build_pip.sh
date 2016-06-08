@@ -2,6 +2,7 @@
 
 git clone https://github.com/amber-md/pytraj
 cd pytraj
+git fetch
 git checkout `git tag | tail -1`
 
 devtools/mkrelease
@@ -9,6 +10,7 @@ devtools/mkrelease
 git clone https://github.com/amber-md/cpptraj
 # cpptraj
 cd cpptraj 
+git fetch
 git checkout master 
 git pull 
 export CPPTRAJHOME=`pwd`
