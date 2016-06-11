@@ -8,7 +8,7 @@ fi
 
 bash miniconda.sh -b
 
-export PATH=$HOME/miniconda/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$PATH
 
 conda install --yes conda-build jinja2 anaconda-client pip \
                     numpy cython h5py libnetcdf \
