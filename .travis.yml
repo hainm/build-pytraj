@@ -33,7 +33,9 @@ install:
     - source travis-ci/setup_env.sh
 
 script:
+    - cwd=`pwd`
     - source build_pip.sh 
+    - cd $cwd
     - source build_conda.sh
 
 after_success:
