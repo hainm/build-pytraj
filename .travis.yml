@@ -1,0 +1,43 @@
+language: cpp
+
+matrix:
+  include:
+    - { os: linux, env: PYTHON_VERSION=3.5 }
+    - { os: osx, env: PYTHON_VERSION=3.5 }
+
+sudo: false
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew tap homebrew/science;
+      brew update;
+      brew install netcdf fftw;
+    fi
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++
+    - gfortran
+    - clang
+    - libz-dev
+    - libbz2-dev
+    - libblas-dev
+    - liblapack-dev
+    - libarpack2-dev
+    - libnetcdf-dev
+
+install:
+    - source travis-ci/setup_env.sh
+
+script:
+    - source build_pip.sh 
+    - source build_conda.sh
+
+after_success:
+    - echo "after_success"
+
+notifications:
+  email: false
