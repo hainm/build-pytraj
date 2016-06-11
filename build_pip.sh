@@ -2,7 +2,10 @@
 
 git clone https://github.com/amber-md/pytraj
 cd pytraj
+git checkout .
+git checkout master
 git fetch
+git pull
 git checkout `git tag | tail -1`
 
 devtools/mkrelease
