@@ -3,6 +3,7 @@
 git clone https://github.com/amber-md/pytraj
 cd pytraj
 git checkout .
+git clean -fdx .
 git checkout master
 git fetch
 git pull
@@ -13,6 +14,7 @@ devtools/mkrelease
 git clone https://github.com/amber-md/cpptraj
 # cpptraj
 cd cpptraj 
+git clean -fdx .
 git fetch
 git checkout master 
 git pull 
