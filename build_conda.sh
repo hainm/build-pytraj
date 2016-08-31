@@ -1,5 +1,6 @@
 #!/bin/sh
 
+git clone https://github.com/amber-md/pytraj
 (cd pytraj && git checkout . && git clean -fdx . && git checkout master && git fetch && git pull)
 
 version=`(cd pytraj && git tag | tail -1)`
