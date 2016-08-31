@@ -7,7 +7,7 @@ git clean -fdx .
 git checkout master
 git fetch
 git pull
-# git checkout `git tag | tail -1`
+git checkout `git tag | tail -1`
 
 devtools/mkrelease
 
