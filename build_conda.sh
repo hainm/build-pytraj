@@ -1,5 +1,6 @@
 #!/bin/sh
 
+conda config --add channels ambermd
 git clone https://github.com/amber-md/pytraj
 (cd pytraj && git checkout . && git clean -fdx . && git checkout master && git fetch && git pull)
 
