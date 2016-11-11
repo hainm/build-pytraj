@@ -30,3 +30,4 @@ fi
 
 cd dist
 python ../scripts/build_wheel.py pytraj*gz
+ls */*
