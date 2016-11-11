@@ -2,17 +2,14 @@ language: cpp
 
 matrix:
   include:
+    # pip build all python version in a single run
     # - { os: linux, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='conda'}
     # - { os: linux, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='conda'}
     # - { os: linux, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='conda'}
-    - { os: linux, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='pip'}
-    - { os: linux, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='pip'}
     - { os: linux, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
     # - { os: osx, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='conda'}
-    - { os: osx, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='pip'}
-    - { os: osx, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='pip'}
     - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
 
 sudo: false
