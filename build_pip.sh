@@ -25,7 +25,7 @@ platform=`uname`
 if [ "$platform" = 'Linux' ]; then
     python scripts/install_libcpptraj.py -openmp
 else
-    CPPTRAJ_COMPILER_OPTION=clang python scripts/install_libcpptraj.py
+    python scripts/install_libcpptraj.py
 fi
 
 cd dist
