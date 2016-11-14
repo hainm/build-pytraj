@@ -25,6 +25,8 @@ platform=`uname`
 if [ "$platform" = 'Linux' ]; then
     python scripts/install_libcpptraj.py -openmp
 else
+    export CC=clang
+    export CXX=clang++
     python scripts/install_libcpptraj.py
 fi
 
