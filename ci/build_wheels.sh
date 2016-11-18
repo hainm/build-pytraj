@@ -12,6 +12,7 @@ else
     export PYBIN=/opt/python/${PYVER}/bin
     export PATH=$PYBIN:$PATH
     echo ${PYVER}
+    yum -y install atlas.x86_64 blas.x86_64 lapack.x86_64
 fi
 # Compile wheels
 echo "building for ${PYBIN}"
