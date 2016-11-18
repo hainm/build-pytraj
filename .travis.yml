@@ -11,7 +11,10 @@ matrix:
     # - { os: osx, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
-      - { os: linux, env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64 PYVER=cp35-cp35m DOCKER_BUILD='true' }
+env:
+    - DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+    - PYVER=cp35-cp35m
+    - DOCKER_BUILD='true'
 
 sudo: required
 
@@ -42,6 +45,7 @@ addons:
 
 install:
     - echo
+    - docker pull $DOCKER_IMAGE
     # - source travis-ci/setup_env.sh
 
 script:
