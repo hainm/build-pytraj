@@ -4,7 +4,7 @@ set -e -x
 yum install bzip2 -y
 
 if [ "${USE_MINICONDA}" = "true" ]; then
-    source /io/travis-ci/setup_env.sh
+    source /io/ci/setup_env.sh
     export PYVER=3.5
     export PYBIN=$HOME/miniconda3/bin/
     export PATH=$PYBIN:$PATH
@@ -18,7 +18,7 @@ echo "building for ${PYBIN}"
 git clone https://github.com/amber-md/pytraj
 cd pytraj
 ${PYBIN}/python --version
-${PYBIN}/python setup.py build
+source /io/ci/install_libcpptraj.sh
 export CPPTRAJHOME=`pwd`/cpptraj/
 ${PYBIN}/pip wheel --no-deps -w wheelhouse/ .
 
