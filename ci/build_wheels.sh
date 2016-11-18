@@ -2,9 +2,14 @@
 set -e -x
 
 yum -y install bzip2
-yum -y install atlas.x86_64 blas.x86_64 lapack.x86_64
-yum -y install zlib-devel bzip2-devel netcdf-devel
-yum -y install gfortran fftw3-devel
+yum -y install atlas.x86_64
+yum -y install blas.x86_64
+yum -y install lapack.x86_64
+yum -y install zlib-devel
+yum -y install bzip2-devel
+yum -y install netcdf-devel
+yum -y install gfortran
+yum -y install fftw3-devel
 
 if [ "${USE_MINICONDA}" = "true" ]; then
     source /io/ci/setup_env.sh
@@ -21,6 +26,7 @@ echo "building for ${PYBIN}"
 git clone https://github.com/amber-md/pytraj
 cd pytraj
 ${PYBIN}/python --version
+${PYBIN}/python -m pip install cython
 source /io/ci/install_libcpptraj.sh
 export CPPTRAJHOME=`pwd`/cpptraj/
 ${PYBIN}/pip wheel --no-deps -w wheelhouse/ .
