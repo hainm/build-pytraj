@@ -2,7 +2,7 @@
 set -e -x
 
 if [ "${USE_MINICONDA}" = "true" ]; then
-    source /io/travis-ci/set_env.sh
+    source /io/travis-ci/setup_env.sh
     export PYVER=3.5
     export PYBIN=$HOME/miniconda3/bin/
     export PATH=$PYBIN:$PATH
