@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e -x
 
-if [ "$MINICONDA" = "true" ]; then
+if [ "${USE_MINICONDA}" = "true" ]; then
     source /io/travis-ci/set_env.sh
     export PYVER=3.5
-    PYBIN=$HOME/miniconda3/bin/
+    export PYBIN=$HOME/miniconda3/bin/
     export PATH=$PYBIN:$PATH
-else:
-    PYBIN=/opt/python/${PYVER}/bin
+else
+    export PYBIN=/opt/python/${PYVER}/bin
     export PATH=$PYBIN:$PATH
     echo ${PYVER}
 fi
