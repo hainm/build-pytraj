@@ -13,6 +13,7 @@ language: cpp
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
 env:
     - DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64 PYVER=cp35-cp35m DOCKER_BUILD='true'
+    - DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64 PYVER=cp35-cp35m DOCKER_BUILD='true' USE_MINICONDA='true'
 
 sudo: required
 
