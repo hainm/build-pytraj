@@ -7,6 +7,7 @@ PYBIN=/opt/python/${PYVER}/bin
 echo "building for ${PYBIN}"
 git clone https://github.com/amber-md/pytraj
 cd pytraj
+${PYBIN}/python --version
 ${PYBIN}/python setup.py build
 export CPPTRAJHOME=`pwd`/cpptraj/
 ${PYBIN}/pip wheel --no-deps -w wheelhouse/ .
