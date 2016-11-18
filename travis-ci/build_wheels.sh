@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e -x
 
+yum install bzip2 -y
+
 if [ "${USE_MINICONDA}" = "true" ]; then
     source /io/travis-ci/setup_env.sh
     export PYVER=3.5
