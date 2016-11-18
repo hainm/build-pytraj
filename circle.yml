@@ -1,6 +1,9 @@
 machine:
   services:
     - docker
+  environment:
+    PYVER: cp35-cp35m
+    DOCKER_IMAGE: quay.io/pypa/manylinux1_x86_64
 
 dependencies:
   override:
@@ -8,8 +11,6 @@ dependencies:
 
 test:
   override:
-    - export DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
-    - export PYVER=cp35-cp35m 
     - source build_manylinux.sh
   post:
     - echo "hello"
