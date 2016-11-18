@@ -13,4 +13,5 @@ test:
   override:
     - source build_manylinux.sh
   post:
-    - echo "hello"
+    - mkdir $CIRCLE_ARTIFACTS/pytraj-build
+    - cp wheelhouse/pytraj*whl $CIRCLE_ARTIFACTS/pytraj-build/
