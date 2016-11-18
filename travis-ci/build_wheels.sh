@@ -5,8 +5,10 @@ if [ "$MINICONDA" = "true" ]; then
     source /io/travis-ci/set_env.sh
     export PYVER=3.5
     PYBIN=$HOME/miniconda3/bin/
+    export PATH=$PYBIN:$PATH
 else:
     PYBIN=/opt/python/${PYVER}/bin
+    export PATH=$PYBIN:$PATH
     echo ${PYVER}
 fi
 # Compile wheels
