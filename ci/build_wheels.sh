@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e -x
 
-source ./ci/build_deps.sh
+source /io/ci/build_deps.sh
 export PYBIN=/opt/python/${PYVER}/bin
 export PATH=$PYBIN:$PATH
 echo ${PYVER}
