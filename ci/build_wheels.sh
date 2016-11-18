@@ -3,6 +3,7 @@ set -e -x
 
 yum -y install bzip2
 yum -y install atlas.x86_64 blas.x86_64 lapack.x86_64
+yum -y install zlib-devel bzip2-devel
 
 if [ "${USE_MINICONDA}" = "true" ]; then
     source /io/ci/setup_env.sh
