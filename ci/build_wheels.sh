@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e -x
 
-yum install bzip2 -y
+yum -y install bzip2
+yum -y install atlas.x86_64 blas.x86_64 lapack.x86_64
 
 if [ "${USE_MINICONDA}" = "true" ]; then
     source /io/ci/setup_env.sh
@@ -12,7 +13,6 @@ else
     export PYBIN=/opt/python/${PYVER}/bin
     export PATH=$PYBIN:$PATH
     echo ${PYVER}
-    yum -y install atlas.x86_64 blas.x86_64 lapack.x86_64
 fi
 # Compile wheels
 echo "building for ${PYBIN}"
