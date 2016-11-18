@@ -6,13 +6,17 @@ matrix:
     # - { os: linux, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='conda'}
     # - { os: linux, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='conda'}
     # - { os: linux, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='conda'}
-    - { os: linux, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
+    # - { os: linux, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
     # - { os: osx, env: PYTHON_VERSION=2.7 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.4 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='conda'}
     # - { os: osx, env: PYTHON_VERSION=3.5 PYTRAJ_BUILD='pip'}
+      - { os: linux, env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64 PYVER=cp35-cp35m DOCKER_BUILD='true' }
 
-sudo: false
+sudo: required
+
+services:
+  - docker
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -37,11 +41,13 @@ addons:
     - libnetcdf-dev
 
 install:
-    - source travis-ci/setup_env.sh
+    - echo
+    # - source travis-ci/setup_env.sh
 
 script:
     - if [[ "$PYTRAJ_BUILD" == 'conda' ]]; then source build_conda.sh; fi
     - if [[ "$PYTRAJ_BUILD" == 'pip' ]]; then source build_pip.sh; fi
+    - if [[ "$DOCKER_BUILD" == 'true' ]]; then source build_manylinux.sh; fi
 
 after_success:
     - echo "after_success"
