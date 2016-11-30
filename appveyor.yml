@@ -29,4 +29,4 @@ build: false
 
 test_script:
   # - "%CMD_IN_ENV% conda build --quiet devtools\\conda-recipe"
-  - "%CMD_IN_ENV% python setup.py install --disable-openmp
+  - "%CMD_IN_ENV% python setup.py install --disable-openmp"
