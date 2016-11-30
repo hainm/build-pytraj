@@ -21,9 +21,11 @@ install:
   - conda config --add channels omnia
   - conda update -yq --all
   - conda install -yq conda-build jinja2
+  - conda install -yq cython
   - git clone https://github.com/amber-md/pytraj
   - cd pytraj
   - cp -rf ../cpptraj .
+  - ls ./cpptraj/
   - python setup.py install --disable-openmp
 
 build: false
