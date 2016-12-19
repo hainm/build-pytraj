@@ -22,4 +22,4 @@ for whl in wheelhouse/pytraj*.whl; do
 done
 
 ${PYBIN}/pip install pytraj --no-index -f /io/wheelhouse
-cd $HOME; ${PYBIN}/python -c 'import pytraj; print(pytraj)'
+cd $HOME; ${PYBIN}/python -c 'import pytraj; pytraj.run_tests()'
