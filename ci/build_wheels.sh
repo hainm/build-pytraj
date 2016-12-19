@@ -12,6 +12,7 @@ git clone https://github.com/amber-md/pytraj
 cd pytraj
 ${PYBIN}/python --version
 ${PYBIN}/python -m pip install cython
+${PYBIN}/python -m pip install numpy
 source /io/ci/install_libcpptraj.sh
 export CPPTRAJHOME=`pwd`/cpptraj/
 ${PYBIN}/pip wheel --no-deps -w wheelhouse/ .
