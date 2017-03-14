@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for PYVER in cp27-cp27m cp34-cp34m cp35-cp35m; do
+for PYVER in cp27-cp27mu cp27-cp27m cp34-cp34m cp35-cp35m cp36-cp36m; do
     echo ${PYVER}
     export PYBIN=/opt/python/${PYVER}/bin
     export PATH=$PYBIN:$PATH
