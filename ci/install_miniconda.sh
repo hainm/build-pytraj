@@ -5,7 +5,7 @@ bash miniconda.sh -b
 export PATH=$HOME/miniconda3/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/miniconda3/lib:$LD_LIBRARY_PATH
 
-conda install -y  \
+conda install -y \
     cython \
     conda-build \
     numpy \
@@ -13,6 +13,8 @@ conda install -y  \
     openblas \
     zlib \
     bzip2 \
-    libnetcdf \
-    libgfortran \
-    gcc
+    libnetcdf
+
+conda install -y -c conda-forge \
+    libgfortran-ng \
+    libgcc-ng
